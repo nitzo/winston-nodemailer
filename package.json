@@ -1,6 +1,6 @@
 {
   "name": "@walandemar/winston-nodemailer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Nodemailer transport for Winston",
   "main": "index.js",
   "scripts": {
