@@ -12,45 +12,43 @@ Prerequisites
 
 Installing
 ---------------
-    npm i winston
-    npm i nodemailer
-    npm i @walandemar/winston-nodemailer
+    npm i winston nodemailer @walandemar/winston-nodemailer
 
 Usage
 -----
 
     const WinstonNodemailer = require('@walandemar/winston-nodemailer')
-    
+
     const logger = new winston.Logger({
       transports: [
         new WinstonNodemailer(options)
       ]
     })
-    
+
     // or
-    
+
     const logger = new winston.Logger()
-    
+
     logger.add(WinstonNodemailer, options)
-    
+
 See [API](#api) for list of available options.
 
 Example
 -----
 
     const winston = require('winston')
-    
+
     const nodemailer = require('nodemailer')
-    
+
     const WinstonNodemailer = require('@walandemar/winston-nodemailer')
-    
+
     const logger = new winston.Logger({
       transports: [
         new winston.transports.Console(),
         new WinstonNodemailer({
           level: 'warn',
           handleExceptions: true,
-          
+
           /* Set mail options as Object */
           mailOptions: {
             from: '"EXAMPLE ERRORS" errors@example.com',
@@ -64,13 +62,13 @@ Example
             to: 'developer@example.com',
             subject: `Winston logger: new ${level} occurred`,
             html: `
-			  ${msg}</br>
-		      </br>
-		      ${JSON.stringify(meta || {})}</br>
-		      </br>
-		    `
+      			  ${msg}</br>
+      		      </br>
+      		      ${JSON.stringify(meta || {})}</br>
+      		      </br>
+      		  `
           },
-          
+
           transporter: nodemailer.createTransport({
             host: 'smtp.example.com',
             port: 465,
@@ -80,9 +78,9 @@ Example
         })
       ]
     })
-    
+
     logger.info('This message will use only Console transport')
-    
+
     logger.warn('This message will use both Console and WinstonNodemailer transports. Pls check your e-mail inbox:)')
 
 API
