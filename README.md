@@ -1,0 +1,1 @@
+Nodemailer transport for Winston

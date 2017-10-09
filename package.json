@@ -1,0 +1,25 @@
+{
+  "name": "@walandemar/winston-nodemailer",
+  "version": "1.0.0",
+  "description": "Nodemailer transport for Winston",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/walandemar/winston-nodemailer.git"
+  },
+  "keywords": [
+    "JS",
+    "NodeJS",
+    "Winston",
+    "Nodemailer"
+  ],
+  "author": "Volodymyr Parandii",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/walandemar/winston-nodemailer/issues"
+  },
+  "homepage": "https://github.com/walandemar/winston-nodemailer#readme"
+}
