@@ -1,21 +1,21 @@
-#﻿@walandemar/winston-nodemailer
+#﻿ @walandemar/winston-nodemailer
 
 [![NPM](https://nodei.co/npm/@walandemar/winston-nodemailer.png?downloads=true&downloadRank=true)](https://nodei.co/npm/@walandemar/winston-nodemailer/)
 
 This is mail transport for [Winston](https://www.npmjs.com/package/winston) logger on top of the [Nodemailer](https://www.npmjs.com/package/nodemailer). Send log e-mails from Node.js - easy as cake! 🍰✉️
 
-##Prerequisites
+## Prerequisites
 
  - This package does't require and install any external dependencies by itself, but it uses your current project's dependency of `winston`
  - You need to install `nodemailer` in order to create (or use existance) transporter and pass it into `WinstonNodemailer` class.
 
-##Installing
+## Installing
 
 ```bash
     npm i winston nodemailer @walandemar/winston-nodemailer
 ```
 
-##Usage
+## Usage
 
 ```js
     const WinstonNodemailer = require('@walandemar/winston-nodemailer')
@@ -34,7 +34,7 @@ This is mail transport for [Winston](https://www.npmjs.com/package/winston) logg
 ```
 See [API](#api) for list of available options.
 
-##Example
+## Example
 
 ```js
     const winston = require('winston')
@@ -85,7 +85,7 @@ See [API](#api) for list of available options.
     logger.warn('This message will use both Console and WinstonNodemailer transports. Pls check your e-mail inbox:)')
 ```
 
-##API
+## API
 
 `WinstonNodemailer` extends `winston.Transport` class with it's standart available options, such as: level, silent, handleExceptions, etc. There are also package specific options:
 
@@ -94,6 +94,6 @@ See [API](#api) for list of available options.
 	 - **to**: the email address of recipient/recipients. [REQUIRED]
  - **transporter**: valid *Nodemailer transporter* that is used to finally send email using *mailOptions*. [REQUIRED]
 
-##License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
