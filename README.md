@@ -1,4 +1,4 @@
-#﻿ @walandemar/winston-nodemailer
+# @walandemar/winston-nodemailer
 
 [![NPM](https://nodei.co/npm/@walandemar/winston-nodemailer.png?downloads=true&downloadRank=true)](https://nodei.co/npm/@walandemar/winston-nodemailer/)
 
@@ -18,71 +18,66 @@ This is mail transport for [Winston](https://www.npmjs.com/package/winston) logg
 ## Usage
 
 ```js
-    const WinstonNodemailer = require('@walandemar/winston-nodemailer')
+const WinstonNodemailer = require('@walandemar/winston-nodemailer')
 
-    const logger = new winston.Logger({
-      transports: [
-        new WinstonNodemailer(options)
-      ]
-    })
+const logger = new winston.Logger({
+  transports: [
+    new WinstonNodemailer(options)
+  ]
+})
 
-    // or
+// or
 
-    const logger = new winston.Logger()
+const logger = new winston.Logger()
 
-    logger.add(WinstonNodemailer, options)
+logger.add(WinstonNodemailer, options)
 ```
 See [API](#api) for list of available options.
 
 ## Example
 
 ```js
-    const winston = require('winston')
+const winston = require('winston')
 
-    const nodemailer = require('nodemailer')
+const nodemailer = require('nodemailer')
 
-    const WinstonNodemailer = require('@walandemar/winston-nodemailer')
+const WinstonNodemailer = require('@walandemar/winston-nodemailer')
 
-    const logger = new winston.Logger({
-      transports: [
-        new winston.transports.Console(),
-        new WinstonNodemailer({
-          level: 'warn',
-          handleExceptions: true,
+const logger = new winston.Logger({
+  transports: [
+    new winston.transports.Console(),
+    new WinstonNodemailer({
+      level: 'warn',
+      handleExceptions: true,
 
-          /* Set mail options as Object */
-          mailOptions: {
-            from: '"EXAMPLE ERRORS" errors@example.com',
-            to: 'developer@example.com',
-            subject: 'Winston logger: new warning occurred'
-          },
+      /* Set mail options as Object */
+      mailOptions: {
+        from: '"EXAMPLE ERRORS" errors@example.com',
+        to: 'developer@example.com',
+        subject: 'Winston logger: new warning occurred'
+      },
 
-          /* OR set mail options as function */
-          mailOptions: (level, msg, meta) => {
-            from: '"EXAMPLE ERRORS" errors@example.com',
-            to: 'developer@example.com',
-            subject: `Winston logger: new ${level} occurred`,
-            html: `
-      			  ${msg}</br>
-      		      </br>
-      		      ${JSON.stringify(meta || {})}</br>
-      		      </br>
-      		  `
-          },
+      /* OR set mail options as function */
+      mailOptions: (level, msg, meta) => {
+        from: '"EXAMPLE ERRORS" errors@example.com',
+        to: 'developer@example.com',
+        subject: `Winston logger: new ${level} occurred`,
+        html: `${msg}</br></br>${JSON.stringify(meta || {})}</br></br>`
+      },
 
-          transporter: nodemailer.createTransport({
-            host: 'smtp.example.com',
-            port: 465,
-            secure: true,
-            auth: {user: 'errors@example.com', pass: 'SuperSecretPassword'}
-          })
-        })
-      ]
+      transporter: nodemailer.createTransport({
+        host: 'smtp.example.com',
+        port: 465,
+        secure: true,
+        auth: {user: 'errors@example.com', pass: 'SuperSecretPassword'}
+      })
     })
+  ]
+})
 
-    logger.info('This message will use only Console transport')
+logger.info('This message will use only Console transport')
 
-    logger.warn('This message will use both Console and WinstonNodemailer transports. Pls check your e-mail inbox:)')
+logger.warn('This message will use both Console and WinstonNodemailer transports. Pls check your e-mail inbox:)')
 ```
 
 ## API
