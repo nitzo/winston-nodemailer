@@ -6,13 +6,13 @@ This is mail transport for [Winston](https://www.npmjs.com/package/winston) logg
 
 ## Prerequisites
 
- - This package does't require and install any external dependencies by itself, but it uses your current project's dependency of `winston`
+ - This package does't require and install any external dependencies by itself, but it uses your current project's dependency of `winston`.
  - You need to install `nodemailer` in order to create (or use existance) transporter and pass it into `WinstonNodemailer` class.
 
 ## Installing
 
 ```bash
-    npm i winston nodemailer @walandemar/winston-nodemailer
+npm i winston nodemailer @walandemar/winston-nodemailer
 ```
 
 ## Usage
@@ -91,4 +91,4 @@ logger.warn('This message will use both Console and WinstonNodemailer transports
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

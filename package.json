@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/walandemar/winston-nodemailer/issues"
   },
-  "homepage": "https://github.com/walandemar/winston-nodemailer#readme"
+  "homepage": "https://github.com/walandemar/winston-nodemailer#readme",
+  "peerDependencies": {
+    "winston": ">= 2.3.1 < 3"
+  }
 }
