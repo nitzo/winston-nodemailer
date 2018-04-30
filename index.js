@@ -11,6 +11,15 @@ class WinstonNodemailer extends Transport {
   }
 
   log(level, msg, meta, callback){
+    
+    if (arguments.length === 2) { // New winston version
+      callback = msg;
+      msg = level.message;
+      meta = level;
+      level = level.level;
+    }
+
+    
     const self = this
 
     const {transporter, mailOptions} = self
